@@ -82,11 +82,13 @@ WSGI_APPLICATION = 'tapsearch.wsgi.application'
 if DEBUG:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'postgres',
-            'USER' : 'postgres',
-            'PASSWORD' : 'admin',
-            'HOST' : 'localhost'
+            'ENGINE': 'django.db.backends.postgresql_psycopg',
+            'NAME': 'd61ti3f2fjlfd7',
+            'USER' : 'edqdyikupiqgob',
+            'PASSWORD' : '7e1745b3ec06e0269ce5766bd9253c2500e372b7cd12a91b7b24921ad1f4bdae',
+            'HOST' : 'ec2-174-129-214-193.compute-1.amazonaws.com:5432',
+            'PORT': '5432',
+            
         }
     }
 else:
