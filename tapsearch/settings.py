@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import django_heroku 
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -82,7 +83,7 @@ WSGI_APPLICATION = 'tapsearch.wsgi.application'
 if DEBUG:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg',
+            'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'd61ti3f2fjlfd7',
             'USER' : 'edqdyikupiqgob',
             'PASSWORD' : '7e1745b3ec06e0269ce5766bd9253c2500e372b7cd12a91b7b24921ad1f4bdae',
@@ -142,4 +143,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+db_from_env = dj_database_url.config()
+DATABASES[‘default’].update(db_from_env)
 django_heroku.settings(locals())
